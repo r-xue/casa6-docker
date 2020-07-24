@@ -21,6 +21,7 @@ BUILD_NUM_RE = re.compile(br'Build: (\d\w*)$')
 
 extra_index_url = 'https://casa-pip.nrao.edu/repository/pypi-group/simple'
 
+
 def main():
 
     description = """
@@ -58,19 +59,20 @@ by default, most casa6 components will be installed:
     platform = '{}{}-{}'.format(get_abbr_impl(), get_impl_ver(), get_abi_tag())
     print('  {}'.format(sys.executable))
     print('  {}'.format(platform))
-    
+
     if args.workdir is None:
-        workdir='/tmp'
+        workdir = '/tmp'
     else:
-        workdir=args.workdir
+        workdir = args.workdir
 
     whl_path = download_casatools(version='latest', workdir='/tmp')
     casatools_path = casatools_repack(whl_path, abi=None, workdir='/tmp')
-    if args.core==True:
-        select='core'
+    if args.core == True:
+        select = 'core'
     else:
-        select='full'
-    casa6_install(casatools_path,select=select,user=args.user,upgrade=args.upgrade)
+        select = 'full'
+    casa6_install(casatools_path, select=select,
+                  user=args.user, upgrade=args.upgrade)
 
 
 def run_subprocess(cmd):
@@ -88,6 +90,7 @@ def run_subprocess(cmd):
             output.append(line.decode())
     rc = process.poll()
     return rc, output
+
 
 def download_casatools(version='latest', workdir='/tmp'):
     """
@@ -115,6 +118,7 @@ def download_casatools(version='latest', workdir='/tmp'):
     whlname = log.replace(pattern1, '').replace(pattern2, '').strip()
 
     return whlname
+
 
 def casatools_repack(whlname, abi=None, workdir='/tmp'):
     """
@@ -191,9 +195,9 @@ def casa6_install(whl_path, select='core', user=True, upgrade=True):
 
     cmd = sys.executable
     cmd += ' -m pip install'
-    if  user==True:
+    if user == True:
         cmd += ' --user'
-    if  upgrade==True:
+    if upgrade == True:
         cmd += ' --upgrade'
     cmd += ' --extra-index-url '+extra_index_url
     cmd += ' '+' '.join(package_list)
@@ -201,6 +205,7 @@ def casa6_install(whl_path, select='core', user=True, upgrade=True):
     rc, output = run_subprocess(cmd)
 
     return rc, output
+
 
 def whl_pack(directory, dest_dir, build_number):
     """
@@ -278,6 +283,7 @@ def whl_pack(directory, dest_dir, build_number):
     print('OK')
 
     return wheel_path
+
 
 if __name__ == '__main__':
 

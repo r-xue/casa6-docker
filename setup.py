@@ -27,7 +27,7 @@ setup(
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
     ],
-    description="",    
+    description="",
     entry_points={
         'console_scripts': [
             'casa6_install = casa6install.casa6install:main'
