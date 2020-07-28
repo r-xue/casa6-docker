@@ -1,6 +1,10 @@
 .vscode
 .dockerignore
 .gitignore
+.git
+.cache
+**/__pycache__
+
 docs
 dist
 build.bash
@@ -11,3 +15,5 @@ requirements_casa6pip36.txt
 setup.py
 singularity.md
 trash.py
+
+!*.md
