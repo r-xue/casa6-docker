@@ -1,20 +1,17 @@
 #!/usr/bin/env python
-
 # encoding: utf-8
-
-
-"""The setup script."""
 
 from setuptools import setup, find_packages
 
 with open('README.rst') as readme_file:
     readme = readme_file.read()
 
-requirements = ['wheel']
+with open('HISTORY.rst') as history_file:
+    history = history_file.read()
 
-setup_requirements = ['pytest-runner', ]
-
-test_requirements = ['pytest>=3', ]
+requirements = ['pip', 'wheel']
+setup_requirements = []
+test_requirements = []
 
 setup(
     author="Rui Xue",
@@ -30,17 +27,21 @@ setup(
     description="",
     entry_points={
         'console_scripts': [
-            'casa6_install = casa6install.casa6install:main'
+            'casa6_install = casa6_install.casa6_install:main'
         ],
     },
     install_requires=requirements,
     license="BSD license",
-    long_description=readme,
+    long_description=readme + '\n\n' + history,
     long_description_content_type="text/x-rst",
-    include_package_data=True,
-    keywords='casa6',
+    include_package_data=False,
+    keywords=['casa6', 'Docker', 'Singularity'],
     name='casa6-install',
-    url='https://github.com/r-xue/casa6-install',
-    version='1.0',
-    zip_safe=False
+    setup_requires=setup_requirements,
+    packages=find_packages(include=['casa6_install', 'casa6_install.*']),
+    url='https://github.com/r-xue/casa6-docker',
+    project_urls={'Bug Reports': 'https://github.com/r-xue/casa-docker/issues',
+                  'Source': 'https://github.com/r-xue/casa-docker'},
+    version='1.1.3',
+    zip_safe=False,
 )

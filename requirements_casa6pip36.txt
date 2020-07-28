@@ -1,6 +1,5 @@
 --extra-index-url https://casa-pip.nrao.edu:443/repository/pypi-group/simple
-casadata
-casatools
+casatools # requires casadata & numpy
 casatasks
 casashell
 casaplotms

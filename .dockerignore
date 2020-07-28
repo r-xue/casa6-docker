@@ -1,0 +1,13 @@
+.vscode
+.dockerignore
+.gitignore
+docs
+dist
+build.bash
+Makefile
+README.md
+README.rst
+requirements_casa6pip36.txt
+setup.py
+singularity.md
+trash.py

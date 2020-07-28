@@ -1,0 +1,524 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>casa6_install.casa6_install &mdash; casa6-docker/install 1.1.3 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> casa6-docker/install
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">casa6-docker</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/brief.html">Brief</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/build.html">Local Build</a></li>
+</ul>
+<p class="caption"><span class="caption-text">casa6-install</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install/usage.html">Purpose</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/usage.html#usage">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/usage.html#smoke-test">Smoke Test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/usage.html#background">Background</a></li>
+</ul>
+<p class="caption"><span class="caption-text">misc.</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../reference.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../history.html">History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ack.html">Acknowledgment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/demo_api_uvhelper.html">ism3d.uvhelper: visibility imaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/demo_api_arts.html">ism3d.arts: model artificial sources in different shapes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/demo_api_lens.html">ism3d.arts.lens: model artificial sources with gravitational lensing effects</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../_autosummary/casa6_install.casa6_install.html">casa6_install.casa6_install</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">casa6-docker/install</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>casa6_install.casa6_install</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for casa6_install.casa6_install</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Main module.&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+<span class="kn">import</span> <span class="nn">fileinput</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+
+<span class="kn">from</span> <span class="nn">wheel.cli</span> <span class="kn">import</span> <span class="n">WheelError</span>
+<span class="kn">from</span> <span class="nn">wheel.wheelfile</span> <span class="kn">import</span> <span class="n">WheelFile</span>
+<span class="kn">from</span> <span class="nn">wheel.cli.unpack</span> <span class="kn">import</span> <span class="n">unpack</span> <span class="k">as</span> <span class="n">whl_unpack</span>
+<span class="kn">from</span> <span class="nn">wheel.pep425tags</span> <span class="kn">import</span> <span class="n">get_abbr_impl</span><span class="p">,</span> <span class="n">get_impl_ver</span><span class="p">,</span> <span class="n">get_abi_tag</span>
+
+<span class="n">DIST_INFO_RE</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
+    <span class="sa">r</span><span class="s2">&quot;^(?P&lt;namever&gt;(?P&lt;name&gt;.+?)-(?P&lt;ver&gt;\d.*?))\.dist-info$&quot;</span><span class="p">)</span>
+<span class="n">BUILD_NUM_RE</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">br</span><span class="s1">&#39;Build: (\d\w*)$&#39;</span><span class="p">)</span>
+
+<span class="n">extra_index_url</span> <span class="o">=</span> <span class="s1">&#39;https://casa-pip.nrao.edu/repository/pypi-group/simple&#39;</span>
+
+
+<div class="viewcode-block" id="main"><a class="viewcode-back" href="../../_autosummary/casa6_install.casa6_install.main.html#casa6_install.casa6_install.main">[docs]</a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Console script for casa6_install.&quot;&quot;&quot;</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+
+<span class="s2">casa6_install will download the latest Py36 casatool whl, repack and install it under Py37/38.</span>
+<span class="s2">Optionally, other casa6 components (casaplotms etc.) can also be installed along the way.</span>
+<span class="s2">This CLI tools provide a temprory workaround for install casa6 within Py&gt;36 interpreter before the incoming official</span>
+<span class="s2">support from NRAO. </span>
+
+<span class="s2">Use this with your own risk and full functions of casa6 is not gauraranteed!</span>
+<span class="s2">tested on macOS10.15 and Ubuntu20.04</span>
+
+<span class="s2">&quot;&quot;&quot;</span>
+
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="n">description</span><span class="p">,</span>
+                                     <span class="n">formatter_class</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">RawTextHelpFormatter</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--user&#39;</span><span class="p">,</span>
+                        <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;pass --user to pip&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-u&#39;</span><span class="p">,</span> <span class="s1">&#39;--upgrade&#39;</span><span class="p">,</span>
+                        <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;upgrade&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;pass --upgrade to pip&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--no-deps&#39;</span><span class="p">,</span> <span class="s1">&#39;--no-dependencies&#39;</span><span class="p">,</span>
+                        <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;nodeps&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;pass --non-deps to pip&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-c&#39;</span><span class="p">,</span> <span class="s1">&#39;--core&#39;</span><span class="p">,</span>
+                        <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;core&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;only install casatools/casatasks</span>
+<span class="s2">by default, most casa6 components will be installed: </span>
+<span class="s2">    casatools,casatask,casashell,casaplotms, etc,</span>
+<span class="s2">    some of which might not work properly yet&quot;&quot;&quot;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-d&#39;</span><span class="p">,</span> <span class="s1">&#39;--dir&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span>
+                        <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;workdir&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;select working directory (instead of the default /tmp&#39;</span><span class="p">)</span>
+
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;check your platform:&quot;</span><span class="p">)</span>
+    <span class="n">platform</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}{}</span><span class="s1">-</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">get_abbr_impl</span><span class="p">(),</span> <span class="n">get_impl_ver</span><span class="p">(),</span> <span class="n">get_abi_tag</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">platform</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">workdir</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">workdir</span> <span class="o">=</span> <span class="s1">&#39;/tmp&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">workdir</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">workdir</span>
+
+    <span class="n">whl_path</span> <span class="o">=</span> <span class="n">download_casatools</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="s1">&#39;latest&#39;</span><span class="p">,</span> <span class="n">workdir</span><span class="o">=</span><span class="s1">&#39;/tmp&#39;</span><span class="p">)</span>
+    <span class="n">casatools_path</span> <span class="o">=</span> <span class="n">casatools_repack</span><span class="p">(</span><span class="n">whl_path</span><span class="p">,</span> <span class="n">abi</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">workdir</span><span class="o">=</span><span class="s1">&#39;/tmp&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">core</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">select</span> <span class="o">=</span> <span class="s1">&#39;core&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">select</span> <span class="o">=</span> <span class="s1">&#39;full&#39;</span>
+    <span class="n">casa6_install</span><span class="p">(</span><span class="n">casatools_path</span><span class="p">,</span> <span class="n">select</span><span class="o">=</span><span class="n">select</span><span class="p">,</span>
+                  <span class="n">user</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">user</span><span class="p">,</span> <span class="n">upgrade</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">upgrade</span><span class="p">,</span> <span class="n">nodeps</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">nodeps</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="mi">0</span></div>
+
+
+<div class="viewcode-block" id="run_subprocess"><a class="viewcode-back" href="../../_autosummary/casa6_install.casa6_install.run_subprocess.html#casa6_install.casa6_install.run_subprocess">[docs]</a><span class="k">def</span> <span class="nf">run_subprocess</span><span class="p">(</span><span class="n">cmd</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    run a subprocess with realtime output</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">process</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">process</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">process</span><span class="o">.</span><span class="n">poll</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="k">if</span> <span class="n">line</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+            <span class="n">output</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+    <span class="n">rc</span> <span class="o">=</span> <span class="n">process</span><span class="o">.</span><span class="n">poll</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">rc</span><span class="p">,</span> <span class="n">output</span></div>
+
+
+<div class="viewcode-block" id="download_casatools"><a class="viewcode-back" href="../../_autosummary/casa6_install.casa6_install.download_casatools.html#casa6_install.casa6_install.download_casatools">[docs]</a><span class="k">def</span> <span class="nf">download_casatools</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="s1">&#39;latest&#39;</span><span class="p">,</span> <span class="n">workdir</span><span class="o">=</span><span class="s1">&#39;/tmp&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    download py36 casatools whl </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">packagename</span> <span class="o">=</span> <span class="s1">&#39;casatools&#39;</span>
+    <span class="k">if</span> <span class="n">version</span> <span class="o">!=</span> <span class="s1">&#39;latest&#39;</span><span class="p">:</span>
+        <span class="n">packagename</span> <span class="o">+=</span> <span class="s1">&#39;==&#39;</span><span class="o">+</span><span class="n">version</span>
+
+    <span class="n">cmd</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">executable</span>
+    <span class="n">cmd</span> <span class="o">+=</span> <span class="s1">&#39; -m pip download&#39;</span>
+    <span class="n">cmd</span> <span class="o">+=</span> <span class="s1">&#39; -d &#39;</span><span class="o">+</span><span class="n">workdir</span>
+    <span class="n">cmd</span> <span class="o">+=</span> <span class="s1">&#39; --python-version 36&#39;</span>
+    <span class="n">cmd</span> <span class="o">+=</span> <span class="s1">&#39; --abi cp36m&#39;</span>
+    <span class="n">cmd</span> <span class="o">+=</span> <span class="s1">&#39; --no-deps&#39;</span>
+    <span class="n">cmd</span> <span class="o">+=</span> <span class="s1">&#39; --extra-index-url &#39;</span><span class="o">+</span><span class="n">extra_index_url</span>
+    <span class="n">cmd</span> <span class="o">+=</span> <span class="s1">&#39; &#39;</span><span class="o">+</span><span class="n">packagename</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;exe: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cmd</span><span class="p">))</span>
+    <span class="n">rc</span><span class="p">,</span> <span class="n">output</span> <span class="o">=</span> <span class="n">run_subprocess</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+
+    <span class="n">pattern1</span> <span class="o">=</span> <span class="s1">&#39;File was already downloaded&#39;</span>
+    <span class="n">pattern2</span> <span class="o">=</span> <span class="s1">&#39;Saved&#39;</span>
+    <span class="n">logs</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">output</span>
+            <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern1</span><span class="o">+</span><span class="s1">&#39;(.+?).whl|&#39;</span><span class="o">+</span><span class="n">pattern2</span><span class="o">+</span><span class="s1">&#39;(.+?).whl&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)]</span>
+    <span class="n">log</span> <span class="o">=</span> <span class="n">logs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">whlname</span> <span class="o">=</span> <span class="n">log</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">pattern1</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">pattern2</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">whlname</span></div>
+
+
+<div class="viewcode-block" id="casatools_repack"><a class="viewcode-back" href="../../_autosummary/casa6_install.casa6_install.casatools_repack.html#casa6_install.casa6_install.casatools_repack">[docs]</a><span class="k">def</span> <span class="nf">casatools_repack</span><span class="p">(</span><span class="n">whlname</span><span class="p">,</span> <span class="n">abi</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">workdir</span><span class="o">=</span><span class="s1">&#39;/tmp&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    repack a Py37 casatools whl for Py37/38</span>
+<span class="sd">    Usage:</span>
+
+<span class="sd">        casatools_repack(casatools-6.1.0.79-cp36-cp36m-macosx_10_15_x86_64.whl,abi=&#39;cp38&#39;)</span>
+<span class="sd">        casatools_repack(casatools-6.1.0.79-cp36-cp36m-macosx_10_15_x86_64.whl,abi=&#39;cp37m&#39;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">abi</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">abi</span> <span class="o">=</span> <span class="n">get_abi_tag</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">abi</span> <span class="o">==</span> <span class="s1">&#39;cp36m&#39;</span><span class="p">:</span>  <span class="c1"># do nothing them</span>
+        <span class="k">return</span> <span class="n">whlname</span>
+
+    <span class="c1"># Step 1:	wheel unpack .whl</span>
+    <span class="c1">#	https://github.com/pypa/wheel/blob/master/src/wheel/cli/unpack.py</span>
+
+    <span class="n">whl_unpack</span><span class="p">(</span><span class="n">whlname</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="n">workdir</span><span class="p">)</span>
+    <span class="n">wf</span> <span class="o">=</span> <span class="n">WheelFile</span><span class="p">(</span><span class="n">whlname</span><span class="p">)</span>
+    <span class="n">namever</span> <span class="o">=</span> <span class="n">wf</span><span class="o">.</span><span class="n">parsed_filename</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;namever&#39;</span><span class="p">)</span>
+    <span class="n">dirname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">workdir</span><span class="p">,</span> <span class="n">namever</span><span class="p">)</span>
+
+    <span class="c1"># Step 2:	modify the casacore library file (.so) names</span>
+
+    <span class="n">flist</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">dirname</span><span class="o">+</span><span class="s1">&#39;/casatools/__casac__/*-36m-*&#39;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">flist</span><span class="p">:</span>
+        <span class="n">newfilename</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;-36m-&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="o">+</span><span class="n">abi</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;cp&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Rename </span><span class="si">{}</span><span class="s1"> to </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">newfilename</span><span class="p">))</span>
+        <span class="n">shutil</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">newfilename</span><span class="p">)</span>
+
+    <span class="c1"># Step 3: rename the function keyword &quot;async&quot; to &quot;isasync&quot;</span>
+
+    <span class="n">pyfile</span> <span class="o">=</span> <span class="n">dirname</span><span class="o">+</span><span class="s1">&#39;/casatools/imager.py&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;rename the kwarg &quot;async&quot; in </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pyfile</span><span class="p">))</span>
+    <span class="k">with</span> <span class="n">fileinput</span><span class="o">.</span><span class="n">FileInput</span><span class="p">(</span><span class="n">pyfile</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">backup</span><span class="o">=</span><span class="s1">&#39;.bak&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;, async=&#39;</span><span class="p">,</span> <span class="s1">&#39;, isasync=&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+                <span class="s1">&#39;: async&#39;</span><span class="p">,</span> <span class="s1">&#39;: isasync&#39;</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Step 4: modify the .whl tag within .dist-info/WHEEL</span>
+
+    <span class="n">pyfile</span> <span class="o">=</span> <span class="n">dirname</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="n">namever</span><span class="o">+</span><span class="s1">&#39;.dist-info/WHEEL&#39;</span>
+    <span class="n">dict_oldname</span> <span class="o">=</span> <span class="n">wf</span><span class="o">.</span><span class="n">parsed_filename</span><span class="o">.</span><span class="n">groupdict</span><span class="p">()</span>
+    <span class="n">dict_newname</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">dict_oldname</span><span class="p">)</span>
+
+    <span class="n">dict_newname</span><span class="p">[</span><span class="s1">&#39;pyver&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">get_abbr_impl</span><span class="p">(),</span> <span class="n">get_impl_ver</span><span class="p">())</span>
+    <span class="n">dict_newname</span><span class="p">[</span><span class="s1">&#39;abi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">abi</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;change &quot;tag&quot; in </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pyfile</span><span class="p">))</span>
+    <span class="k">with</span> <span class="n">fileinput</span><span class="o">.</span><span class="n">FileInput</span><span class="p">(</span><span class="n">pyfile</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">backup</span><span class="o">=</span><span class="s1">&#39;.bak&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">oldtag</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{pyver}</span><span class="s1">-</span><span class="si">{abi}</span><span class="s1">-</span><span class="si">{plat}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">dict_oldname</span><span class="p">)</span>
+        <span class="n">newtag</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{pyver}</span><span class="s1">-</span><span class="si">{abi}</span><span class="s1">-</span><span class="si">{plat}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">dict_newname</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">oldtag</span><span class="p">,</span> <span class="n">newtag</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Step 5: repack: whl: wheel pack *</span>
+
+    <span class="n">whl_path</span> <span class="o">=</span> <span class="n">whl_pack</span><span class="p">(</span><span class="n">dirname</span><span class="p">,</span> <span class="n">workdir</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">whl_path</span></div>
+
+
+<div class="viewcode-block" id="casa6_install"><a class="viewcode-back" href="../../_autosummary/casa6_install.casa6_install.casa6_install.html#casa6_install.casa6_install.casa6_install">[docs]</a><span class="k">def</span> <span class="nf">casa6_install</span><span class="p">(</span><span class="n">whl_path</span><span class="p">,</span> <span class="n">select</span><span class="o">=</span><span class="s1">&#39;core&#39;</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">upgrade</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">nodeps</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    install casa6 packages with pip</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">package_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">whl_path</span><span class="p">]</span>   <span class="c1"># used for rxastro/casa6:base</span>
+    <span class="k">if</span> <span class="n">select</span> <span class="o">==</span> <span class="s1">&#39;full&#39;</span><span class="p">:</span>        <span class="c1"># optional, used for rxastro/casa6:latest</span>
+        <span class="n">package_list</span> <span class="o">+=</span> <span class="p">[</span><span class="s1">&#39;casatasks&#39;</span><span class="p">,</span> <span class="s1">&#39;casadata&#39;</span><span class="p">,</span> <span class="s1">&#39;casashell&#39;</span><span class="p">,</span> <span class="s1">&#39;casaviewer&#39;</span><span class="p">,</span>
+                         <span class="s1">&#39;casaplotms&#39;</span><span class="p">,</span> <span class="s1">&#39;casatelemetry&#39;</span><span class="p">]</span>
+
+    <span class="n">cmd</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">executable</span>
+    <span class="n">cmd</span> <span class="o">+=</span> <span class="s1">&#39; -m pip install&#39;</span>
+    <span class="k">if</span> <span class="n">user</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">cmd</span> <span class="o">+=</span> <span class="s1">&#39; --user&#39;</span>
+    <span class="k">if</span> <span class="n">upgrade</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">cmd</span> <span class="o">+=</span> <span class="s1">&#39; --upgrade&#39;</span>
+    <span class="k">if</span> <span class="n">nodeps</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">cmd</span> <span class="o">+=</span> <span class="s1">&#39; --no-deps&#39;</span>
+    <span class="n">cmd</span> <span class="o">+=</span> <span class="s1">&#39; --extra-index-url &#39;</span><span class="o">+</span><span class="n">extra_index_url</span>
+    <span class="n">cmd</span> <span class="o">+=</span> <span class="s1">&#39; &#39;</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">package_list</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;exe: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cmd</span><span class="p">))</span>
+    <span class="n">rc</span><span class="p">,</span> <span class="n">output</span> <span class="o">=</span> <span class="n">run_subprocess</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">rc</span><span class="p">,</span> <span class="n">output</span></div>
+
+
+<div class="viewcode-block" id="whl_pack"><a class="viewcode-back" href="../../_autosummary/casa6_install.casa6_install.whl_pack.html#casa6_install.casa6_install.whl_pack">[docs]</a><span class="k">def</span> <span class="nf">whl_pack</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">dest_dir</span><span class="p">,</span> <span class="n">build_number</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    modified from https://github.com/pypa/wheel/blob/master/src/wheel/cli/pack.py</span>
+<span class="sd">    return output whl path</span>
+
+<span class="sd">    Repack a previously unpacked wheel directory into a new wheel file.</span>
+<span class="sd">    The .dist-info/WHEEL file must contain one or more tags so that the target</span>
+<span class="sd">    wheel file name can be determined.</span>
+<span class="sd">    :param directory: The unpacked wheel directory</span>
+<span class="sd">    :param dest_dir: Destination directory (defaults to the current directory)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Find the .dist-info directory</span>
+    <span class="n">dist_info_dirs</span> <span class="o">=</span> <span class="p">[</span><span class="n">fn</span> <span class="k">for</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
+                      <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">fn</span><span class="p">))</span> <span class="ow">and</span> <span class="n">DIST_INFO_RE</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">fn</span><span class="p">)]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">dist_info_dirs</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">WheelError</span><span class="p">(</span>
+            <span class="s1">&#39;Multiple .dist-info directories found in </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">directory</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="ow">not</span> <span class="n">dist_info_dirs</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">WheelError</span><span class="p">(</span>
+            <span class="s1">&#39;No .dist-info directories found in </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">directory</span><span class="p">))</span>
+
+    <span class="c1"># Determine the target wheel filename</span>
+    <span class="n">dist_info_dir</span> <span class="o">=</span> <span class="n">dist_info_dirs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">name_version</span> <span class="o">=</span> <span class="n">DIST_INFO_RE</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">dist_info_dir</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;namever&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Read the tags and the existing build number from .dist-info/WHEEL</span>
+    <span class="n">existing_build_number</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">wheel_file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">dist_info_dir</span><span class="p">,</span> <span class="s1">&#39;WHEEL&#39;</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">wheel_file_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">tags</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;Tag: &#39;</span><span class="p">):</span>
+                <span class="n">tags</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span>
+            <span class="k">elif</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;Build: &#39;</span><span class="p">):</span>
+                <span class="n">existing_build_number</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">tags</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">WheelError</span><span class="p">(</span><span class="s1">&#39;No tags present in </span><span class="si">{}</span><span class="s1">/WHEEL; cannot determine target wheel filename&#39;</span>
+                             <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dist_info_dir</span><span class="p">))</span>
+
+    <span class="c1"># Set the wheel file name and add/replace/remove the Build tag in .dist-info/WHEEL</span>
+    <span class="n">build_number</span> <span class="o">=</span> <span class="n">build_number</span> <span class="k">if</span> <span class="n">build_number</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">existing_build_number</span>
+    <span class="k">if</span> <span class="n">build_number</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">build_number</span><span class="p">:</span>
+            <span class="n">name_version</span> <span class="o">+=</span> <span class="s1">&#39;-&#39;</span> <span class="o">+</span> <span class="n">build_number</span>
+
+        <span class="k">if</span> <span class="n">build_number</span> <span class="o">!=</span> <span class="n">existing_build_number</span><span class="p">:</span>
+            <span class="n">replacement</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Build: </span><span class="si">%s</span><span class="se">\r\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">build_number</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+                <span class="s1">&#39;ascii&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">build_number</span> <span class="k">else</span> <span class="sa">b</span><span class="s1">&#39;&#39;</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">wheel_file_path</span><span class="p">,</span> <span class="s1">&#39;rb+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">wheel_file_content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">BUILD_NUM_RE</span><span class="o">.</span><span class="n">subn</span><span class="p">(</span><span class="n">replacement</span><span class="p">,</span> <span class="n">wheel_file_content</span><span class="p">)[</span><span class="mi">1</span><span class="p">]:</span>
+                    <span class="n">wheel_file_content</span> <span class="o">+=</span> <span class="n">replacement</span>
+
+                <span class="n">f</span><span class="o">.</span><span class="n">truncate</span><span class="p">()</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">wheel_file_content</span><span class="p">)</span>
+
+    <span class="c1"># Reassemble the tags for the wheel file</span>
+    <span class="n">impls</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">({</span><span class="n">tag</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">tags</span><span class="p">})</span>
+    <span class="n">abivers</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">({</span><span class="n">tag</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">tags</span><span class="p">})</span>
+    <span class="n">platforms</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">({</span><span class="n">tag</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span> <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">tags</span><span class="p">})</span>
+    <span class="n">tagline</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">impls</span><span class="p">),</span> <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">abivers</span><span class="p">),</span>
+                        <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">platforms</span><span class="p">)])</span>
+
+    <span class="c1"># Repack the wheel</span>
+    <span class="n">wheel_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="n">dest_dir</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">-</span><span class="si">{}</span><span class="s1">.whl&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name_version</span><span class="p">,</span> <span class="n">tagline</span><span class="p">))</span>
+    <span class="k">with</span> <span class="n">WheelFile</span><span class="p">(</span><span class="n">wheel_path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">wf</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Repacking wheel as </span><span class="si">{}</span><span class="s2">...&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">wheel_path</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+        <span class="n">wf</span><span class="o">.</span><span class="n">write_files</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;OK&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">wheel_path</span></div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Rui Xue
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

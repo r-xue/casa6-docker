@@ -1,0 +1,278 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>casa6_install.casa6_install.casa6_install &mdash; casa6-docker/install 1.1.3 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="casa6_install.casa6_install.casatools_repack" href="casa6_install.casa6_install.casatools_repack.html" />
+    <link rel="prev" title="casa6_install.casa6_install" href="casa6_install.casa6_install.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> casa6-docker/install
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">casa6-docker</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../docker/brief.html">Brief</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/build.html">Local Build</a></li>
+</ul>
+<p class="caption"><span class="caption-text">casa6-install</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install/usage.html">Purpose</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/usage.html#usage">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/usage.html#smoke-test">Smoke Test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/usage.html#background">Background</a></li>
+</ul>
+<p class="caption"><span class="caption-text">misc.</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../history.html">History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ack.html">Acknowledgment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/demo_api_uvhelper.html">ism3d.uvhelper: visibility imaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/demo_api_arts.html">ism3d.arts: model artificial sources in different shapes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/demo_api_lens.html">ism3d.arts.lens: model artificial sources with gravitational lensing effects</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="casa6_install.casa6_install.html">casa6_install.casa6_install</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">casa6_install.casa6_install.casa6_install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="casa6_install.casa6_install.casatools_repack.html">casa6_install.casa6_install.casatools_repack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="casa6_install.casa6_install.download_casatools.html">casa6_install.casa6_install.download_casatools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="casa6_install.casa6_install.main.html">casa6_install.casa6_install.main</a></li>
+<li class="toctree-l2"><a class="reference internal" href="casa6_install.casa6_install.run_subprocess.html">casa6_install.casa6_install.run_subprocess</a></li>
+<li class="toctree-l2"><a class="reference internal" href="casa6_install.casa6_install.whl_pack.html">casa6_install.casa6_install.whl_pack</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">casa6-docker/install</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="casa6_install.casa6_install.html">casa6_install.casa6_install</a> &raquo;</li>
+        
+      <li>casa6_install.casa6_install.casa6_install</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="casa6-install-casa6-install-casa6-install">
+<h1>casa6_install.casa6_install.casa6_install<a class="headerlink" href="#casa6-install-casa6-install-casa6-install" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt id="casa6_install.casa6_install.casa6_install">
+<code class="sig-prename descclassname">casa6_install.casa6_install.</code><code class="sig-name descname">casa6_install</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">whl_path</span></em>, <em class="sig-param"><span class="n">select</span><span class="o">=</span><span class="default_value">'core'</span></em>, <em class="sig-param"><span class="n">user</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">upgrade</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">nodeps</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/casa6_install/casa6_install.html#casa6_install"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#casa6_install.casa6_install.casa6_install" title="Permalink to this definition">¶</a></dt>
+<dd><p>install casa6 packages with pip</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="casa6_install.casa6_install.casatools_repack.html" class="btn btn-neutral float-right" title="casa6_install.casa6_install.casatools_repack" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="casa6_install.casa6_install.html" class="btn btn-neutral float-left" title="casa6_install.casa6_install" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Rui Xue
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,322 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Usage &mdash; casa6-docker/install 1.1.3 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Local Build" href="build.html" />
+    <link rel="prev" title="Brief" href="brief.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> casa6-docker/install
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">casa6-docker</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="brief.html">Brief</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#use-with-docker">Use with Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#use-with-jupyter">Use with Jupyter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#use-with-singularity">Use with Singularity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#use-as-a-docker-base-image">Use as a Docker base image</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="build.html">Local Build</a></li>
+</ul>
+<p class="caption"><span class="caption-text">casa6-install</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install/usage.html">Purpose</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/usage.html#usage">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/usage.html#smoke-test">Smoke Test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/usage.html#background">Background</a></li>
+</ul>
+<p class="caption"><span class="caption-text">misc.</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../history.html">History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ack.html">Acknowledgment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/demo_api_uvhelper.html">ism3d.uvhelper: visibility imaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/demo_api_arts.html">ism3d.arts: model artificial sources in different shapes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/demo_api_lens.html">ism3d.arts.lens: model artificial sources with gravitational lensing effects</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../_autosummary/casa6_install.casa6_install.html">casa6_install.casa6_install</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">casa6-docker/install</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Usage</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You don’t need the repository content to use the <a class="reference external" href="https://hub.docker.com/r/rxastro/casa6/tags">Docker Hub</a> images.</p>
+</div>
+<div class="section" id="use-with-docker">
+<h2>Use with Docker<a class="headerlink" href="#use-with-docker" title="Permalink to this headline">¶</a></h2>
+<p>To run <code class="docutils literal notranslate"><span class="pre">rxastro:casa6</span></code> on a host with <a class="reference external" href="https://docs.docker.com/docker-for-mac/install/">Docker Desktop</a>, just type,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> docker run -it -v ~/Workspace:/root/WorkDir rxastro/casa6:latest bash
+</pre></div>
+</div>
+<p>In case you would like to manually update local-cached images after any repository update, you probably want to add this first:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> docker pull rxastro/casa6:latest
+</pre></div>
+</div>
+<p>This will download and start a container on-the-fly and login as <code class="docutils literal notranslate"><span class="pre">root</span></code> (bravely…), while mounting your host directory <code class="docutils literal notranslate"><span class="pre">~/Workspace</span></code> (assuming it exists) to <code class="docutils literal notranslate"><span class="pre">/root/WorkDir</span></code> of your container.
+After this, you can perform code development and data analysis in <code class="docutils literal notranslate"><span class="pre">/root/WorkDir</span></code> on your container (actually pointing to <code class="docutils literal notranslate"><span class="pre">~/Workspace</span></code> in your host now), with the access of tools/environment (e.g. <strong>casa6</strong>, <strong>astropy</strong>, etc.) residing in the container.</p>
+</div>
+<div class="section" id="use-with-jupyter">
+<h2>Use with Jupyter<a class="headerlink" href="#use-with-jupyter" title="Permalink to this headline">¶</a></h2>
+<p>A Jupyter server has been built in the Docker image <code class="docutils literal notranslate"><span class="pre">rxastro/casa6:latest</span></code> (see the <a class="reference external" href="https://github.com/r-xue/casa6-docker/blob/master/Dockerfile">Dockerfile</a> content for its customization).
+This creates a useful feature of <code class="docutils literal notranslate"><span class="pre">rx.astro/casa6:latest</span></code>: you can connect your host web browser to the Jupyter server running its container instance.
+Then you have a portable development environment independent from your host OS, which offers all Jupyter-based features (e.g. <a class="reference external" href="https://ipywidgets.readthedocs.io">Widgets</a>) along with many Python packages: <strong>casatools</strong>, <strong>casatasks</strong>, <strong>astropy</strong>, <strong>numpy</strong>, <strong>matplotlib</strong>, and more.</p>
+<p>To log in a <code class="docutils literal notranslate"><span class="pre">rxastro/casa6:latest</span></code> container and start the Jupyter session,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">user@host      $</span> docker run -v ~/Workspace:/root/WorkDir --env <span class="nv">PORT</span><span class="o">=</span><span class="m">8890</span> -it -p <span class="m">8890</span>:8890 rxastro/casa6:latest bash
+<span class="gp">root@container $</span> jupyter-lab <span class="c1"># start a Jupyter session</span>
+</pre></div>
+</div>
+<p>Then you can move back to the host, open a web browser, and connect it to the Jupyter server running on the guest OS:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">user@host      $</span> firefox --new-window <span class="si">${</span><span class="nv">address</span><span class="p">:</span><span class="nv">8890</span><span class="p">-with-token</span><span class="si">}</span>
+</pre></div>
+</div>
+<p><em>work-in-progress</em>: If you download the <a class="reference external" href="https://github.com/r-xue/casa6-docker/blob/master/notebooks/">example data and notebooks</a> and put them in <code class="docutils literal notranslate"><span class="pre">~/Workspace</span></code> on the host, you should be able to re-run them in your firefox window as shown in the example pages: <a class="reference external" href="https://r-xue.github.io/casa6-docker/html/notebooks/demo_api_uvhelper.html">ism3d.uvhelper</a>, <a class="reference external" href="https://r-xue.github.io/casa6-docker/html/notebooks/demo_api_arts.html">ism3d.arts</a>, and <a class="reference external" href="https://r-xue.github.io/casa6-docker/html/notebooks/demo_api_lens.html">ism3d.arts.lens</a></p>
+</div>
+<div class="section" id="use-with-singularity">
+<h2>Use with Singularity<a class="headerlink" href="#use-with-singularity" title="Permalink to this headline">¶</a></h2>
+<p>One use case of the Docker images is that these portable containers can be imported to <a class="reference external" href="https://singularity.lbl.gov/docs-hpc">Singularity</a> for HPC-based deployment.</p>
+<p>try:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> singularity pull docker://rxastro/casa6:latest
+<span class="gp">$</span> file casa6_latest.sif
+<span class="gp">$</span> singularity inspect casa6_latest.sif
+<span class="gp">$</span> singularity <span class="nb">exec</span> -H <span class="nv">$HOME</span>/vh:/Users/Rui casa6_latest.sif /bin/bash
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There are significant design <a class="reference external" href="https://sylabs.io/guides/3.6/user-guide/singularity_and_docker.html">differences</a> between Docker and Singularity, and a detailed demonstration is beyond the scope of this documentation.</p>
+</div>
+</div>
+<div class="section" id="use-as-a-docker-base-image">
+<h2>Use as a Docker base image<a class="headerlink" href="#use-as-a-docker-base-image" title="Permalink to this headline">¶</a></h2>
+<p>You can start from <code class="docutils literal notranslate"><span class="pre">rxastro/casa6:latest</span></code> <a class="reference external" href="https://github.com/r-xue/casa6-docker/blob/master/Dockerfile">Dockerfile</a>, customize it (e.g., add more packages or your pipeline/workflow, optimize container size), and build a local image for your purpose using the local <a class="reference external" href="http://r-xue.github.io/casa6-docker/html/docker/build.html">building instruction</a>.</p>
+<p>You can also use the Docker hub image a base image for your custom build, which may save some time.
+Just put <code class="docutils literal notranslate"><span class="pre">FROM:</span> <span class="pre">rxastro/casa6:latest</span></code> in your Dockerfile.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="build.html" class="btn btn-neutral float-right" title="Local Build" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="brief.html" class="btn btn-neutral float-left" title="Brief" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Rui Xue
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
