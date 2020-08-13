@@ -108,7 +108,7 @@ c.NotebookApp.allow_root = True \n\
 RUN pip3 install ipython numpy scipy \
         jupyterlab wurlitzer line_profiler memory_profiler \
         astropy bottleneck spectral-cube radio-beam \
-        emcee corner && \
+        emcee corner dask && \
     rm -rf ./.cache/pip /tmp/* /var/tmp/*
 RUN mkdir ./.casa && echo "telemetry_enabled = False" > ./.casa/config.py       
 RUN pip3 install casadata casatasks casashell casaplotms casaviewer casatelemetry \
