@@ -2,14 +2,12 @@
 Brief
 =====
 
-casa6-docker: create a development and data analysis environment with **casa6** installed
-
-The GitHub `repository <https://github.com/r-xue/casa6-docker>`_ hosts a `Dockerfile <https://github.com/r-xue/casa6-docker/blob/master/Dockerfile>`_ which automatically build images containing development and data analysis environment with `casa6 <https://casa.nrao.edu/casa_obtaining.shtml>`_ and other Python packages (`astropy <https://www.astropy.org/>`_, `Jupyter <https://jupyter.org>`_, etc.) installed. 
-The adopted base image is `Ubuntu 20.04 <https://releases.ubuntu.com/20.04/>`_.
+The GitHub `repository <https://github.com/r-xue/casa6-docker>`_ contains a `Dockerfile <https://github.com/r-xue/casa6-docker/blob/master/Dockerfile>`_, which automatically builds two ``casa6-docker`` images hosted at the `Docker Hub <https://hub.docker.com/r/rxastro/casa6/tags>`_.
+These images contain a base Linux environment (upon `Ubuntu 20.04 <https://releases.ubuntu.com/20.04/>`_) with `casa6 <https://casa.nrao.edu/casa_obtaining.shtml>`_ and other Python packages (`astropy <https://www.astropy.org/>`_, `Jupyter <https://jupyter.org>`_, etc.) already installed. 
 
     https://registry.hub.docker.com/r/rxastro/casa6
 
-Two image versions (tags) are available on Docker Hub:
+The difference between these two images (tags) is described as below:
     
 - `rxastro/casa6:latest <https://hub.docker.com/r/rxastro/casa6/tags>`_
 
@@ -24,7 +22,7 @@ Two image versions (tags) are available on Docker Hub:
 
         - nano, git, wget
 
-    the container footprint is reasonable (~1GB) and efforts have been made to reduce its size (minimized and stash layers)
+    the container footprint is reasonable (~1GB) and efforts have been made to reduce its size (minimize and stash layers)
 
 
 - `rxastro/casa6:base <https://hub.docker.com/r/rxastro/casa6/tags>`_

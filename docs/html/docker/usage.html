@@ -95,17 +95,17 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="brief.html">Brief</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#use-with-docker">Use with Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#launch-with-an-interactive-shell">Launch with an interactive shell</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#use-with-jupyter">Use with Jupyter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#use-with-singularity">Use with Singularity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#use-as-a-docker-base-image">Use as a Docker base image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#as-a-docker-base-image">As a Docker base image</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="build.html">Local Build</a></li>
 </ul>
 <p class="caption"><span class="caption-text">casa6-install</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../install/usage.html">Purpose</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/usage.html">Brief</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/usage.html#usage">Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/usage.html#smoke-test">Smoke Test</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/usage.html#background">Background</a></li>
@@ -218,24 +218,24 @@
 <p class="admonition-title">Note</p>
 <p>You don’t need the repository content to use the <a class="reference external" href="https://hub.docker.com/r/rxastro/casa6/tags">Docker Hub</a> images.</p>
 </div>
-<div class="section" id="use-with-docker">
-<h2>Use with Docker<a class="headerlink" href="#use-with-docker" title="Permalink to this headline">¶</a></h2>
-<p>To run <code class="docutils literal notranslate"><span class="pre">rxastro:casa6</span></code> on a host with <a class="reference external" href="https://docs.docker.com/docker-for-mac/install/">Docker Desktop</a>, just type,</p>
+<div class="section" id="launch-with-an-interactive-shell">
+<h2>Launch with an interactive shell<a class="headerlink" href="#launch-with-an-interactive-shell" title="Permalink to this headline">¶</a></h2>
+<p>To launch the container with an interactive shell on a host with <a class="reference external" href="https://docs.docker.com/docker-for-mac/install/">Docker Desktop</a> running, just type:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> docker run -it -v ~/Workspace:/root/WorkDir rxastro/casa6:latest bash
 </pre></div>
 </div>
-<p>In case you would like to manually update local-cached images after any repository update, you probably want to add this first:</p>
+<p>This will download the image <code class="docutils literal notranslate"><span class="pre">rxastro/casa6:latest</span></code>, start a container instance, and login as <code class="docutils literal notranslate"><span class="pre">root</span></code> (bravely…). It will also try to mount the host directory <code class="docutils literal notranslate"><span class="pre">~/Workspace</span></code> (assuming it exists) to <code class="docutils literal notranslate"><span class="pre">/root/WorkDir</span></code> of your container.
+After this, you can perform code development and data analysis in <code class="docutils literal notranslate"><span class="pre">/root/WorkDir</span></code> of your container (now pointing to <code class="docutils literal notranslate"><span class="pre">~/Workspace</span></code> on the host), with the access of tools/environment (e.g. <strong>casa6</strong>, <strong>astropy</strong>, etc.) residing in the image.</p>
+<p>In case you would like to manually update local-cached images for whatever reasons, you probably want to run this before launching the container again:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> docker pull rxastro/casa6:latest
 </pre></div>
 </div>
-<p>This will download and start a container on-the-fly and login as <code class="docutils literal notranslate"><span class="pre">root</span></code> (bravely…), while mounting your host directory <code class="docutils literal notranslate"><span class="pre">~/Workspace</span></code> (assuming it exists) to <code class="docutils literal notranslate"><span class="pre">/root/WorkDir</span></code> of your container.
-After this, you can perform code development and data analysis in <code class="docutils literal notranslate"><span class="pre">/root/WorkDir</span></code> on your container (actually pointing to <code class="docutils literal notranslate"><span class="pre">~/Workspace</span></code> in your host now), with the access of tools/environment (e.g. <strong>casa6</strong>, <strong>astropy</strong>, etc.) residing in the container.</p>
 </div>
 <div class="section" id="use-with-jupyter">
 <h2>Use with Jupyter<a class="headerlink" href="#use-with-jupyter" title="Permalink to this headline">¶</a></h2>
 <p>A Jupyter server has been built in the Docker image <code class="docutils literal notranslate"><span class="pre">rxastro/casa6:latest</span></code> (see the <a class="reference external" href="https://github.com/r-xue/casa6-docker/blob/master/Dockerfile">Dockerfile</a> content for its customization).
 This creates a useful feature of <code class="docutils literal notranslate"><span class="pre">rx.astro/casa6:latest</span></code>: you can connect your host web browser to the Jupyter server running its container instance.
-Then you have a portable development environment independent from your host OS, which offers all Jupyter-based features (e.g. <a class="reference external" href="https://ipywidgets.readthedocs.io">Widgets</a>) along with many Python packages: <strong>casatools</strong>, <strong>casatasks</strong>, <strong>astropy</strong>, <strong>numpy</strong>, <strong>matplotlib</strong>, and more.</p>
+This gives you a portable development environment semi-isolated from your host OS that offers all Jupyter-based features (e.g. <a class="reference external" href="https://ipywidgets.readthedocs.io">Widgets</a>) along with many Python packages: <strong>casatools</strong>, <strong>casatasks</strong>, <strong>astropy</strong>, <strong>numpy</strong>, <strong>matplotlib</strong>, and more.</p>
 <p>To log in a <code class="docutils literal notranslate"><span class="pre">rxastro/casa6:latest</span></code> container and start the Jupyter session,</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">user@host      $</span> docker run -v ~/Workspace:/root/WorkDir --env <span class="nv">PORT</span><span class="o">=</span><span class="m">8890</span> -it -p <span class="m">8890</span>:8890 rxastro/casa6:latest bash
 <span class="gp">root@container $</span> jupyter-lab <span class="c1"># start a Jupyter session</span>
@@ -249,8 +249,7 @@ Then you have a portable development environment independent from your host OS, 
 </div>
 <div class="section" id="use-with-singularity">
 <h2>Use with Singularity<a class="headerlink" href="#use-with-singularity" title="Permalink to this headline">¶</a></h2>
-<p>One use case of the Docker images is that these portable containers can be imported to <a class="reference external" href="https://singularity.lbl.gov/docs-hpc">Singularity</a> for HPC-based deployment.</p>
-<p>try:</p>
+<p>Docker images can be imported to <a class="reference external" href="https://singularity.lbl.gov/docs-hpc">Singularity</a> for HPC-based deployment:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> singularity pull docker://rxastro/casa6:latest
 <span class="gp">$</span> file casa6_latest.sif
 <span class="gp">$</span> singularity inspect casa6_latest.sif
@@ -262,10 +261,10 @@ Then you have a portable development environment independent from your host OS, 
 <p>There are significant design <a class="reference external" href="https://sylabs.io/guides/3.6/user-guide/singularity_and_docker.html">differences</a> between Docker and Singularity, and a detailed demonstration is beyond the scope of this documentation.</p>
 </div>
 </div>
-<div class="section" id="use-as-a-docker-base-image">
-<h2>Use as a Docker base image<a class="headerlink" href="#use-as-a-docker-base-image" title="Permalink to this headline">¶</a></h2>
-<p>You can start from <code class="docutils literal notranslate"><span class="pre">rxastro/casa6:latest</span></code> <a class="reference external" href="https://github.com/r-xue/casa6-docker/blob/master/Dockerfile">Dockerfile</a>, customize it (e.g., add more packages or your pipeline/workflow, optimize container size), and build a local image for your purpose using the local <a class="reference external" href="http://r-xue.github.io/casa6-docker/html/docker/build.html">building instruction</a>.</p>
-<p>You can also use the Docker hub image a base image for your custom build, which may save some time.
+<div class="section" id="as-a-docker-base-image">
+<h2>As a Docker base image<a class="headerlink" href="#as-a-docker-base-image" title="Permalink to this headline">¶</a></h2>
+<p>You can start from the <a class="reference external" href="https://github.com/r-xue/casa6-docker/blob/master/Dockerfile">Dockerfile</a> of <code class="docutils literal notranslate"><span class="pre">rxastro/casa6:latest</span></code>, edit it (e.g., add more packages or your pipeline/workflow), and build a local image to your specification (see <a class="reference external" href="http://r-xue.github.io/casa6-docker/html/docker/build.html">the local build instruction</a>).</p>
+<p>You can also directly use the online Docker Hub image as the base image for your custom build, which may save some time.
 Just put <code class="docutils literal notranslate"><span class="pre">FROM:</span> <span class="pre">rxastro/casa6:latest</span></code> in your Dockerfile.</p>
 </div>
 </div>

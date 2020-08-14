@@ -1,8 +1,5 @@
-Purpose
-=======
-
-
-casa6-install: help install casa6 under Py37/Py38 on macOS/Linux
+Brief
+=====
 
 As of July 2020, the `casa6 <https://ui.adsabs.harvard.edu/abs/2019arXiv191209439R/abstract>`_ core component `casatools <https://open-bitbucket.nrao.edu/projects/CASA/repos/casa6/browse>`_ is only available as Py36 `wheels <https://packaging.python.org/discussions/wheel-vs-egg>`_ for `macOS/Linux <https://casa-pip.nrao.edu/#browse/browse:pypi-group:casatools>`_.
 If Python 3.6 is the default interpreter, you can just use `pip-3.6` with `this requirements file <https://github.com/r-xue/casa6-docker/blob/master/requirements_casa6pip36.txt>`_ for installation.
@@ -13,7 +10,7 @@ If Python 3.6 is the default interpreter, you can just use `pip-3.6` with `this 
 
 However, if you are using Python >=3.7 for workflow/development, the standard ``pip`` procedure won't work.
 
-**casa6-docker** provides a command-line program as a temporary workaround on the current installation issue, before the `official support <https://pypi.org/project/casatools/>`_ of the latest Python and OS from `NRAO <https://casa.nrao.edu/casadocs/casa-5.6.0/introduction/casa6-installation-and-usage>`_.
+**casa6-install** provides a command-line program as a temporary workaround on the current installation issue, before the `official support <https://pypi.org/project/casatools/>`_ of the latest Python and OS from `NRAO <https://casa.nrao.edu/casadocs/casa-5.6.0/introduction/casa6-installation-and-usage>`_.
 It can help install `casatools`_ along with other **casa6** modules in one step (tested on macOS10.15 and Ubuntu20.04), let you have a working copy of **casa6** modules with Python >=3.7.
 
 .. note::

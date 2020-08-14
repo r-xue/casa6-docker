@@ -99,7 +99,7 @@
 </ul>
 <p class="caption"><span class="caption-text">casa6-install</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../install/usage.html">Purpose</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/usage.html">Brief</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/usage.html#usage">Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/usage.html#smoke-test">Smoke Test</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/usage.html#background">Background</a></li>
@@ -208,13 +208,12 @@
 </style>
 <div class="section" id="brief">
 <h1>Brief<a class="headerlink" href="#brief" title="Permalink to this headline">¶</a></h1>
-<p>casa6-docker: create a development and data analysis environment with <strong>casa6</strong> installed</p>
-<p>The GitHub <a class="reference external" href="https://github.com/r-xue/casa6-docker">repository</a> hosts a <a class="reference external" href="https://github.com/r-xue/casa6-docker/blob/master/Dockerfile">Dockerfile</a> which automatically build images containing development and data analysis environment with <a class="reference external" href="https://casa.nrao.edu/casa_obtaining.shtml">casa6</a> and other Python packages (<a class="reference external" href="https://www.astropy.org/">astropy</a>, <a class="reference external" href="https://jupyter.org">Jupyter</a>, etc.) installed.
-The adopted base image is <a class="reference external" href="https://releases.ubuntu.com/20.04/">Ubuntu 20.04</a>.</p>
+<p>The GitHub <a class="reference external" href="https://github.com/r-xue/casa6-docker">repository</a> contains a <a class="reference external" href="https://github.com/r-xue/casa6-docker/blob/master/Dockerfile">Dockerfile</a>, which automatically builds two <code class="docutils literal notranslate"><span class="pre">casa6-docker</span></code> images hosted at the <a class="reference external" href="https://hub.docker.com/r/rxastro/casa6/tags">Docker Hub</a>.
+These images contain a base Linux environment (upon <a class="reference external" href="https://releases.ubuntu.com/20.04/">Ubuntu 20.04</a>) with <a class="reference external" href="https://casa.nrao.edu/casa_obtaining.shtml">casa6</a> and other Python packages (<a class="reference external" href="https://www.astropy.org/">astropy</a>, <a class="reference external" href="https://jupyter.org">Jupyter</a>, etc.) already installed.</p>
 <blockquote>
 <div><p><a class="reference external" href="https://registry.hub.docker.com/r/rxastro/casa6">https://registry.hub.docker.com/r/rxastro/casa6</a></p>
 </div></blockquote>
-<p>Two image versions (tags) are available on Docker Hub:</p>
+<p>The difference between these two images (tags) is described as below:</p>
 <ul>
 <li><p><a class="reference external" href="https://hub.docker.com/r/rxastro/casa6/tags">rxastro/casa6:latest</a></p>
 <blockquote>
@@ -233,7 +232,7 @@ The adopted base image is <a class="reference external" href="https://releases.u
 <li><p>nano, git, wget</p></li>
 </ul>
 </div></blockquote>
-<p>the container footprint is reasonable (~1GB) and efforts have been made to reduce its size (minimized and stash layers)</p>
+<p>the container footprint is reasonable (~1GB) and efforts have been made to reduce its size (minimize and stash layers)</p>
 </div></blockquote>
 </li>
 <li><p><a class="reference external" href="https://hub.docker.com/r/rxastro/casa6/tags">rxastro/casa6:base</a></p>
