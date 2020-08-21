@@ -13,13 +13,17 @@ import shutil
 from wheel.cli import WheelError
 from wheel.wheelfile import WheelFile
 from wheel.cli.unpack import unpack as whl_unpack
-from wheel.pep425tags import get_abbr_impl, get_impl_ver, get_abi_tag
 
-DIST_INFO_RE = re.compile(
-    r"^(?P<namever>(?P<name>.+?)-(?P<ver>\d.*?))\.dist-info$")
-BUILD_NUM_RE = re.compile(br'Build: (\d\w*)$')
+# wheel.prep425tags is gone now: https://github.com/pypa/wheel/pull/346
+# from wheel.pep425tags import get_abbr_impl, get_impl_ver, get_abi_tag
 
-extra_index_url = 'https://casa-pip.nrao.edu/repository/pypi-group/simple'
+from packaging.tags import interpreter_name as get_abbr_impl
+from packaging.tags import interpreter_version as get_impl_ver
+from wheel.bdist_wheel import get_abi_tag
+
+
+#extra_index_url = 'https://casa-pip.nrao.edu/repository/pypi-group/simple'
+extra_index_url = 'https://casa-pip.nrao.edu/repository/pypi-casa-release/simple'
 
 
 def main():
@@ -130,8 +134,8 @@ def download_casatools(version='latest', workdir='/tmp'):
 def casatools_repack(whlname, abi=None, workdir='/tmp'):
     """
     repack a Py37 casatools whl for Py37/38
-    Usage:
 
+    Usage:
         casatools_repack(casatools-6.1.0.79-cp36-cp36m-macosx_10_15_x86_64.whl,abi='cp38')
         casatools_repack(casatools-6.1.0.79-cp36-cp36m-macosx_10_15_x86_64.whl,abi='cp37m')
     """
@@ -218,9 +222,10 @@ def casa6_install(whl_path, select='core', user=True, upgrade=True, nodeps=False
 
 def whl_pack(directory, dest_dir, build_number):
     """
+    Repack a previously unpacked wheel directory into a new wheel file.
 
     modified from https://github.com/pypa/wheel/blob/master/src/wheel/cli/pack.py
-    return output whl path
+    with the output whl path returned
 
     Repack a previously unpacked wheel directory into a new wheel file.
     The .dist-info/WHEEL file must contain one or more tags so that the target
@@ -228,6 +233,11 @@ def whl_pack(directory, dest_dir, build_number):
     :param directory: The unpacked wheel directory
     :param dest_dir: Destination directory (defaults to the current directory)
     """
+
+    DIST_INFO_RE = re.compile(
+        r"^(?P<namever>(?P<name>.+?)-(?P<ver>\d.*?))\.dist-info$")
+    BUILD_NUM_RE = re.compile(br'Build: (\d\w*)$')
+
     # Find the .dist-info directory
     dist_info_dirs = [fn for fn in os.listdir(directory)
                       if os.path.isdir(os.path.join(directory, fn)) and DIST_INFO_RE.match(fn)]

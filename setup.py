@@ -9,7 +9,7 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = ['pip', 'wheel']
+requirements = ['pip>20.0', 'wheel>=0.35.1']
 setup_requirements = []
 test_requirements = []
 
@@ -42,6 +42,6 @@ setup(
     url='https://github.com/r-xue/casa6-docker',
     project_urls={'Bug Reports': 'https://github.com/r-xue/casa-docker/issues',
                   'Source': 'https://github.com/r-xue/casa-docker'},
-    version='1.1.3',
+    version='1.1.4',
     zip_safe=False,
 )

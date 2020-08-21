@@ -46,7 +46,7 @@ RUN apt-get update && \
 
 # add latest pip although pip3 still points to ubuntu/pip3 
 
-RUN pip3 install --upgrade pip && \
+RUN pip3 install --upgrade pip packaging && \
     rm -rf ./.cache/pip
 
 # install latested casatools from NRAO
@@ -112,7 +112,7 @@ RUN pip3 install ipython numpy scipy \
     rm -rf ./.cache/pip /tmp/* /var/tmp/*
 RUN mkdir ./.casa && echo "telemetry_enabled = False" > ./.casa/config.py       
 RUN pip3 install casadata casatasks casashell casaplotms casaviewer casatelemetry \
-        --extra-index-url https://casa-pip.nrao.edu:443/repository/pypi-group/simple && \
+        --extra-index-url https://casa-pip.nrao.edu/repository/pypi-casa-release/simple && \
     rm -rf ./.cache/pip /tmp/* /var/tmp/*
 RUN pip3 list 
 

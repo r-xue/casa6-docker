@@ -46,7 +46,7 @@ RUN apt-get update && \
 
 # add latest pip although pip3 still points to ubuntu/pip3 
 
-RUN pip3 install --upgrade pip && \
+RUN pip3 install --upgrade pip packaging && \
     rm -rf ./.cache/pip
 
 # install latested casatools from NRAO

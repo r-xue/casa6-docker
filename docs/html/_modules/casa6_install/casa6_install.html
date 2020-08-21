@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>casa6_install.casa6_install &mdash; casa6-docker/install 1.1.3 documentation</title>
+  <title>casa6_install.casa6_install &mdash; casa6-docker/install 1.1.4 documentation</title>
   
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                1.1.3
+                1.1.4
               </div>
             
           
@@ -196,17 +196,21 @@
 <span class="kn">from</span> <span class="nn">wheel.cli</span> <span class="kn">import</span> <span class="n">WheelError</span>
 <span class="kn">from</span> <span class="nn">wheel.wheelfile</span> <span class="kn">import</span> <span class="n">WheelFile</span>
 <span class="kn">from</span> <span class="nn">wheel.cli.unpack</span> <span class="kn">import</span> <span class="n">unpack</span> <span class="k">as</span> <span class="n">whl_unpack</span>
-<span class="kn">from</span> <span class="nn">wheel.pep425tags</span> <span class="kn">import</span> <span class="n">get_abbr_impl</span><span class="p">,</span> <span class="n">get_impl_ver</span><span class="p">,</span> <span class="n">get_abi_tag</span>
 
-<span class="n">DIST_INFO_RE</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
-    <span class="sa">r</span><span class="s2">&quot;^(?P&lt;namever&gt;(?P&lt;name&gt;.+?)-(?P&lt;ver&gt;\d.*?))\.dist-info$&quot;</span><span class="p">)</span>
-<span class="n">BUILD_NUM_RE</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">br</span><span class="s1">&#39;Build: (\d\w*)$&#39;</span><span class="p">)</span>
+<span class="c1"># wheel.prep425tags is gone now: https://github.com/pypa/wheel/pull/346</span>
+<span class="c1"># from wheel.pep425tags import get_abbr_impl, get_impl_ver, get_abi_tag</span>
 
-<span class="n">extra_index_url</span> <span class="o">=</span> <span class="s1">&#39;https://casa-pip.nrao.edu/repository/pypi-group/simple&#39;</span>
+<span class="kn">from</span> <span class="nn">packaging.tags</span> <span class="kn">import</span> <span class="n">interpreter_name</span> <span class="k">as</span> <span class="n">get_abbr_impl</span>
+<span class="kn">from</span> <span class="nn">packaging.tags</span> <span class="kn">import</span> <span class="n">interpreter_version</span> <span class="k">as</span> <span class="n">get_impl_ver</span>
+<span class="kn">from</span> <span class="nn">wheel.bdist_wheel</span> <span class="kn">import</span> <span class="n">get_abi_tag</span>
+
+
+<span class="c1">#extra_index_url = &#39;https://casa-pip.nrao.edu/repository/pypi-group/simple&#39;</span>
+<span class="n">extra_index_url</span> <span class="o">=</span> <span class="s1">&#39;https://casa-pip.nrao.edu/repository/pypi-casa-release/simple&#39;</span>
 
 
 <div class="viewcode-block" id="main"><a class="viewcode-back" href="../../_autosummary/casa6_install.casa6_install.main.html#casa6_install.casa6_install.main">[docs]</a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Console script for casa6_install.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Console script function for casa6_install.&quot;&quot;&quot;</span>
     <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
 
 <span class="s2">casa6_install will download the latest Py36 casatool whl, repack and install it under Py37/38.</span>
@@ -313,8 +317,8 @@
 <div class="viewcode-block" id="casatools_repack"><a class="viewcode-back" href="../../_autosummary/casa6_install.casa6_install.casatools_repack.html#casa6_install.casa6_install.casatools_repack">[docs]</a><span class="k">def</span> <span class="nf">casatools_repack</span><span class="p">(</span><span class="n">whlname</span><span class="p">,</span> <span class="n">abi</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">workdir</span><span class="o">=</span><span class="s1">&#39;/tmp&#39;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    repack a Py37 casatools whl for Py37/38</span>
-<span class="sd">    Usage:</span>
 
+<span class="sd">    Usage:</span>
 <span class="sd">        casatools_repack(casatools-6.1.0.79-cp36-cp36m-macosx_10_15_x86_64.whl,abi=&#39;cp38&#39;)</span>
 <span class="sd">        casatools_repack(casatools-6.1.0.79-cp36-cp36m-macosx_10_15_x86_64.whl,abi=&#39;cp37m&#39;)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -401,9 +405,10 @@
 
 <div class="viewcode-block" id="whl_pack"><a class="viewcode-back" href="../../_autosummary/casa6_install.casa6_install.whl_pack.html#casa6_install.casa6_install.whl_pack">[docs]</a><span class="k">def</span> <span class="nf">whl_pack</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">dest_dir</span><span class="p">,</span> <span class="n">build_number</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Repack a previously unpacked wheel directory into a new wheel file.</span>
 
 <span class="sd">    modified from https://github.com/pypa/wheel/blob/master/src/wheel/cli/pack.py</span>
-<span class="sd">    return output whl path</span>
+<span class="sd">    with the output whl path returned</span>
 
 <span class="sd">    Repack a previously unpacked wheel directory into a new wheel file.</span>
 <span class="sd">    The .dist-info/WHEEL file must contain one or more tags so that the target</span>
@@ -411,6 +416,11 @@
 <span class="sd">    :param directory: The unpacked wheel directory</span>
 <span class="sd">    :param dest_dir: Destination directory (defaults to the current directory)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">DIST_INFO_RE</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
+        <span class="sa">r</span><span class="s2">&quot;^(?P&lt;namever&gt;(?P&lt;name&gt;.+?)-(?P&lt;ver&gt;\d.*?))\.dist-info$&quot;</span><span class="p">)</span>
+    <span class="n">BUILD_NUM_RE</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">br</span><span class="s1">&#39;Build: (\d\w*)$&#39;</span><span class="p">)</span>
+
     <span class="c1"># Find the .dist-info directory</span>
     <span class="n">dist_info_dirs</span> <span class="o">=</span> <span class="p">[</span><span class="n">fn</span> <span class="k">for</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
                       <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">fn</span><span class="p">))</span> <span class="ow">and</span> <span class="n">DIST_INFO_RE</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">fn</span><span class="p">)]</span>

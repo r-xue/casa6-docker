@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Brief &mdash; casa6-docker/install 1.1.3 documentation</title>
+  <title>Brief &mdash; casa6-docker/install 1.1.4 documentation</title>
   
 
   
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                1.1.3
+                1.1.4
               </div>
             
           
@@ -220,13 +220,6 @@ If Python 3.6 is the default interpreter, you can just use <cite>pip-3.6</cite> 
 <p>However, if you are using Python &gt;=3.7 for workflow/development, the standard <code class="docutils literal notranslate"><span class="pre">pip</span></code> procedure won’t work.</p>
 <p><strong>casa6-install</strong> provides a command-line program as a temporary workaround on the current installation issue, before the <a class="reference external" href="https://pypi.org/project/casatools/">official support</a> of the latest Python and OS from <a class="reference external" href="https://casa.nrao.edu/casadocs/casa-5.6.0/introduction/casa6-installation-and-usage">NRAO</a>.
 It can help install <a class="reference external" href="https://open-bitbucket.nrao.edu/projects/CASA/repos/casa6/browse">casatools</a> along with other <strong>casa6</strong> modules in one step (tested on macOS10.15 and Ubuntu20.04), let you have a working copy of <strong>casa6</strong> modules with Python &gt;=3.7.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<ul class="simple">
-<li><p>The program is not affiliated with NRAO and the official CASA6 development. It only serves for code developmental purposes, e.g., building/testing your own Python program/pipeline using <strong>casa6</strong> modules. The tool modifies the official Py36 .whl file to make it “compatible” with Py37/38 (see <em>Background</em> below). It doesn’t build a binary from scratch.</p></li>
-<li><p>Although the <em>hacking</em> approach in <strong>casa-install</strong> will get working <strong>casa6</strong> modules on macOS&gt;=10.14 with Python&gt;=3.7, it doesn’t guarantee that the installed package will work properly on Linux. This is due to various library dependency (e.g. lack of <code class="docutils literal notranslate"><span class="pre">libgfortran3</span></code>) and many potential differences between the building platform and your local OS distribution. Specifically for Ubuntu20.04, please check out this <a class="reference external" href="https://github.com/r-xue/casa6-docker/blob/master/Dockerfile">Dockerfile</a> on how to work around the dependency issue (involving the manual installation of <code class="docutils literal notranslate"><span class="pre">libtinfo5</span></code>, <code class="docutils literal notranslate"><span class="pre">libquadmath0</span></code>, <code class="docutils literal notranslate"><span class="pre">libgfortran3</span></code>). For this moment, I found no issue at least when using <code class="docutils literal notranslate"><span class="pre">casatools</span></code> and <code class="docutils literal notranslate"><span class="pre">casatasks</span></code> for development purposes.</p></li>
-</ul>
-</div>
 </div>
 <div class="section" id="usage">
 <h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
@@ -237,8 +230,8 @@ It can help install <a class="reference external" href="https://open-bitbucket.n
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> pip install --user casa6-install
 </pre></div>
 </div>
-<p>After this, type:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> casa6_install
+<p>With the “–user” option, you must add the user-level bin directory (e.g., ~/Library/Python/3.8/bin) to your <cite>PATH</cite> environment variable. After this, try:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> casa6_install --user --upgrade
 </pre></div>
 </div>
 <p>A full summary of the <code class="docutils literal notranslate"><span class="pre">casa6_install</span></code> command options is available:</p>
@@ -251,6 +244,17 @@ It can help install <a class="reference external" href="https://open-bitbucket.n
 <p>You may download the python module file <a class="reference external" href="casa6_install/casa6_install.py">casa6_install/casa6_install.py</a> and use it directly:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> python casa6_install.py
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>The program is not affiliated with NRAO and the official CASA6 development. It only serves for code developmental purposes, e.g., building/testing your own Python program/pipeline using <strong>casa6</strong> modules. The tool modifies the official Py36 .whl file to make it “compatible” with Py37/38 (see <em>Background</em> below). It doesn’t build a binary from scratch.</p></li>
+<li><p>Although the <em>hacking</em> approach in <strong>casa-install</strong> will get working <strong>casa6</strong> modules on macOS&gt;=10.14 with Python&gt;=3.7, it doesn’t guarantee that the installed package will work properly on Linux. This is due to various library dependency (e.g. lack of <code class="docutils literal notranslate"><span class="pre">libgfortran3</span></code>) and many potential differences between the building platform and your local OS distribution. Specifically for Ubuntu20.04, please check out this <a class="reference external" href="https://github.com/r-xue/casa6-docker/blob/master/Dockerfile">Dockerfile</a> on how to work around the dependency issue (involving the manual installation of <code class="docutils literal notranslate"><span class="pre">libtinfo5</span></code>, <code class="docutils literal notranslate"><span class="pre">libquadmath0</span></code>, <code class="docutils literal notranslate"><span class="pre">libgfortran3</span></code>). For this moment, I found no issue at least when using <code class="docutils literal notranslate"><span class="pre">casatools</span></code> and <code class="docutils literal notranslate"><span class="pre">casatasks</span></code> for development purposes.</p></li>
+<li><p>You may need to remove previous installations before upgrading modules due to version inter-dependency:</p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> pip uninstall --yes casadata casatools casatasks casaviewer casashell
+</pre></div>
+</div>
 </div>
 </div>
 </div>

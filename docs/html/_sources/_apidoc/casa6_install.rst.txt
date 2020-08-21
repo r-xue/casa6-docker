@@ -12,7 +12,6 @@ casa6\_install.casa6\_install module
    :undoc-members:
    :show-inheritance:
 
-
 Module contents
 ---------------
 
