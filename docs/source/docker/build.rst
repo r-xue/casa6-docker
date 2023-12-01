@@ -15,10 +15,10 @@ Then start to build local images
 
 .. code-block:: console
 
-    $ docker build -t casa6:latest --squash -f Dockerfile .
-    $ docker build -t casa6:base --squash -f Dockerfile.base .
+    $ docker build --target base -t casa6:base -f Dockerfile .
+    $ docker build --target latest -t casa6:latest -f Dockerfile .
 
-    $ docker image inspect casa6:lates --format='{{.Size}}'
+    $ docker image inspect casa6:latest --format='{{.Size}}'
     $ docker image inspect casa6:base --format='{{.Size}}'
     $ docker history casa6:latest    
 
