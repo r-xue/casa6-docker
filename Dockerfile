@@ -6,8 +6,8 @@
 #
 #       $ # docker system prune --all 
 #       # # export DOCKER_BUILDKIT=1
-#       $ docker build -t casa6:latest --squash -f Dockerfile .
-#       $ docker build -t casa6:base --squash -f Dockerfile.base .
+#       $ docker build --target base -t casa6:base -f Dockerfile .
+#       $ docker build --target latest -t casa6:latest -f Dockerfile .
 #
 #       $ docker image inspect casa6:base --format='{{.Size}}'
 #       $ docker run -it casa6:base bash
@@ -19,7 +19,12 @@
 #
 ###################################################################################################
 
-FROM ubuntu:focal
+ARG os_image=ubuntu:focal
+
+# the stage to build casa6:base image
+
+FROM ${os_image} AS base_build
+
 LABEL maintainer="rx.astro@gmail.com"
 
 # use bash instead of default sh
@@ -34,9 +39,9 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && \
     apt-get dist-upgrade -y && \
     apt-get install --no-install-recommends -y \
-        python3-pip wget python-is-python3 \
-        libtinfo5 libquadmath0 \
-        && \
+    python3-pip wget python-is-python3 \
+    libtinfo5 libquadmath0 \
+    && \
     apt-get autoremove -y && \ 
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
@@ -69,25 +74,31 @@ RUN wget http://archive.ubuntu.com/ubuntu/pool/universe/g/gcc-6/libgfortran3_6.4
 # clean up
 
 RUN rm -rf \
-        ./.cache/pip \
-        /var/lib/apt/lists/* \
-        /tmp/* /var/tmp/*
+    ./.cache/pip \
+    /var/lib/apt/lists/* \
+    /tmp/* /var/tmp/*
 
-####################################################################
-# note: the content above this line is identical to Dockerfile.base
-# Bonus (for development)
-####################################################################
+# the stage to compact casa6:base image
+
+FROM scratch AS base
+# alternatively also use '-w root' with docker run
+WORKDIR /root
+COPY --from=base_build / /
+
+# the stage to build casa6:latest image, reduce layers
+
+FROM base_build AS latest_build
 
 # more apt install
 
 RUN apt-get update && \
     apt-get dist-upgrade -y && \
     apt-get install --no-install-recommends -y \
-        nano less wget git gcc python3-dev \
-        # gfortran build-essential make \
-        # cython3 \
-        # libfftw3-dev numdiff python3-pybind11 \
-        && \
+    nano less wget git gcc python3-dev \
+    # gfortran build-essential make \
+    # cython3 \
+    # libfftw3-dev numdiff python3-pybind11 \
+    && \
     apt-get autoremove -y && \     
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
@@ -95,30 +106,52 @@ RUN apt-get update && \
 # add more Python packages
 
 RUN mkdir ./.jupyter
-RUN echo -e "\
-import os \n\
-c.IPKernelApp.pylab = 'inline' \n\
-c.NotebookApp.notebook_dir = '.' \n\
-c.NotebookApp.ip = '0.0.0.0' \n\
-c.NotebookApp.allow_remote_access = False \n\
-c.NotebookApp.open_browser = False \n\
-c.NotebookApp.port = int(os.environ.get('PORT', 8888)) \n\
-c.NotebookApp.allow_root = True \n\
-" >> ./.jupyter/jupyter_notebook_config.py
+# RUN echo -e "\
+#     import os \n\
+#     c.IPKernelApp.pylab = 'inline' \n\
+#     c.ServerApp.notebook_dir = '.' \n\
+#     c.ServerApp.ip = '0.0.0.0' \n\
+#     c.ServerApp.allow_remote_access = False \n\
+#     c.ServerApp.open_browser = False \n\
+#     c.ServerApp.port = int(os.environ.get('PORT', 8888)) \n\
+#     c.ServerApp.allow_root = True \n\
+#     c.LabApp.news_url = None \n\
+#     c.LabApp.check_for_updates_class = 'jupyterlab.NeverCheckForUpdate' \n\
+#     " >> ./.jupyter/jupyter_lab_config.py
+
+RUN printf "%s\n" \
+    "import os" \
+    "c.IPKernelApp.pylab = 'inline'" \
+    "c.ServerApp.notebook_dir = '.'" \
+    "c.ServerApp.ip = '0.0.0.0'" \
+    "c.ServerApp.allow_remote_access = False" \
+    "c.ServerApp.open_browser = False" \
+    "c.ServerApp.port = int(os.environ.get('PORT', 8888))" \
+    "c.ServerApp.allow_root = True" \
+    "c.LabApp.news_url = None" \
+    "c.LabApp.check_for_updates_class = 'jupyterlab.NeverCheckForUpdate'" \
+    > ./.jupyter/jupyter_lab_config.py
 RUN pip3 install ipython numpy scipy \
-        jupyterlab wurlitzer line_profiler memory_profiler \
-        astropy bottleneck spectral-cube radio-beam \
-        emcee corner dask && \
+    jupyterlab wurlitzer line_profiler memory_profiler \
+    astropy bottleneck spectral-cube radio-beam \
+    emcee corner dask && \
     rm -rf ./.cache/pip /tmp/* /var/tmp/*
 RUN mkdir ./.casa && echo "telemetry_enabled = False" > ./.casa/config.py       
-RUN pip3 install casadata casatasks casashell casaplotms casaviewer casatelemetry \
-        --extra-index-url https://casa-pip.nrao.edu/repository/pypi-casa-release/simple && \
+RUN pip3 install casadata casatasks casashell casaplotms casaviewer \
+    --extra-index-url https://casa-pip.nrao.edu/repository/pypi-casa-release/simple && \
     rm -rf ./.cache/pip /tmp/* /var/tmp/*
 RUN pip3 list 
 
 # more clean up
 
 RUN rm -rf \
-        ./.cache/pip \
-        /var/lib/apt/lists/* \
-        /tmp/* /var/tmp/*
+    ./.cache/pip \
+    /var/lib/apt/lists/* \
+    /tmp/* /var/tmp/*
+
+# the stage to compact casa6:latest image, reduce layers
+
+FROM scratch AS latest
+# alternatively also use '-w root' with docker run
+WORKDIR /root 
+COPY --from=latest_build / /
