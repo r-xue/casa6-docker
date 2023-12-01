@@ -1,7 +1,7 @@
 # Makefile for building Sphinx documentations
 
 # You can set these variables from the command line.
-SPHINXOPTS    =
+SPHINXOPTS    = -v -j auto
 SPHINXBUILD   = python -msphinx
 SPHINXPROJ    = casa6_install
 SOURCEDIR     = source
