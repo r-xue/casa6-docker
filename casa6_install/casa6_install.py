@@ -9,6 +9,7 @@ import argparse
 import subprocess
 import copy
 import shutil
+import textwrap
 
 from wheel.cli import WheelError
 from wheel.wheelfile import WheelFile
@@ -28,19 +29,14 @@ extra_index_url = 'https://casa-pip.nrao.edu/repository/pypi-casa-release/simple
 
 def main():
     """Console script function for casa6_install."""
-    description = """
+    description = r"""
+    casa6_install can help download/install the casatools whl, optionally with other casa6 components, e.g. casaplotms etc.
 
-casa6_install will download the latest Py36 casatool whl, repack and install it under Py37/38.
-Optionally, other casa6 components (casaplotms etc.) can also be installed along the way.
-This CLI tools provide a temprory workaround for install casa6 within Py>36 interpreter before the incoming official
-support from NRAO. 
+    The CLI tool also provides some workaround functionalities to across-install wheels under Python versions not officially
+    supported by the NRAO public releases. But this should be only used for testing purposes.
+    """
 
-Use this with your own risk and full functions of casa6 is not gauraranteed!
-tested on macOS10.15 and Ubuntu20.04
-
-"""
-
-    parser = argparse.ArgumentParser(description=description,
+    parser = argparse.ArgumentParser(description=textwrap.dedent(description),
                                      formatter_class=argparse.RawTextHelpFormatter)
 
     parser.add_argument('--user',
@@ -73,8 +69,11 @@ by default, most casa6 components will be installed:
     else:
         workdir = args.workdir
 
-    whl_path = download_casatools(version='latest', workdir='/tmp')
-    casatools_path = casatools_repack(whl_path, abi=None, workdir='/tmp')
+    whl_path = download_casatools(version='latest', workdir='/tmp', pyver='38')
+    # no need for repacking when getting newer CASA versions.
+    # casatools_path = casatools_repack(whl_path, abi=None, workdir='/tmp')
+    casatools_path = whl_path
+
     if args.core == True:
         select = 'core'
     else:
@@ -86,9 +85,7 @@ by default, most casa6 components will be installed:
 
 
 def run_subprocess(cmd):
-    """
-    run a subprocess with realtime output
-    """
+    """Run a subprocess with realtime output."""
     process = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
     output = []
     while True:
@@ -102,10 +99,8 @@ def run_subprocess(cmd):
     return rc, output
 
 
-def download_casatools(version='latest', workdir='/tmp'):
-    """
-    download py36 casatools whl 
-    """
+def download_casatools(version='latest', workdir='/tmp', pyver='36'):
+    """Download py36 casatools whl."""
     packagename = 'casatools'
     if version != 'latest':
         packagename += '=='+version
@@ -113,8 +108,11 @@ def download_casatools(version='latest', workdir='/tmp'):
     cmd = sys.executable
     cmd += ' -m pip download'
     cmd += ' -d '+workdir
-    cmd += ' --python-version 36'
-    cmd += ' --abi cp36m'
+    cmd += f' --python-version {pyver}'
+    cmd += f' --abi cp{pyver}'
+    if int(pyver) <= 37:
+        # PEP 3149: note that 'm' tag (--with-pymalloc) has been removed since py38
+        cmd += m
     cmd += ' --no-deps'
     cmd += ' --extra-index-url '+extra_index_url
     cmd += ' '+packagename
@@ -137,7 +135,7 @@ def casatools_repack(whlname, abi=None, workdir='/tmp'):
 
     Usage:
         casatools_repack(casatools-6.1.0.79-cp36-cp36m-macosx_10_15_x86_64.whl,abi='cp38')
-        casatools_repack(casatools-6.1.0.79-cp36-cp36m-macosx_10_15_x86_64.whl,abi='cp37m')
+        casatools_repack(casatools-6.1.0.79-cp36-cp36m-macosx_10_15_x86_64.whl,abi='cp37m')      
     """
 
     if abi is None:
@@ -195,14 +193,11 @@ def casatools_repack(whlname, abi=None, workdir='/tmp'):
 
 
 def casa6_install(whl_path, select='core', user=True, upgrade=True, nodeps=False):
-    """
-    install casa6 packages with pip
-    """
+    """Install casa6 packages with pip."""
 
     package_list = [whl_path]   # used for rxastro/casa6:base
     if select == 'full':        # optional, used for rxastro/casa6:latest
-        package_list += ['casatasks', 'casadata', 'casashell', 'casaviewer',
-                         'casaplotms', 'casatelemetry']
+        package_list += ['casatasks', 'casadata', 'casashell', 'casaviewer', 'casaplotms']
 
     cmd = sys.executable
     cmd += ' -m pip install'
