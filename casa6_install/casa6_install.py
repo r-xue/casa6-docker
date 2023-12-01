@@ -50,7 +50,7 @@ def main():
                         help="pass --non-deps to pip")
     parser.add_argument('-c', '--core',
                         dest="core", action="store_true",
-                        help="""only install casatools/casatasks
+                        help="""only install casatools
 by default, most casa6 components will be installed: 
     casatools,casatask,casashell,casaplotms, etc,
     some of which might not work properly yet""")

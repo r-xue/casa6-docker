@@ -60,16 +60,18 @@ RUN pip3 install --upgrade pip packaging && \
 #   + numpy
 #   + casadata (which I skip with --no-deps to keep the rx.astro/casa6:base image slim)
 COPY casa6_install/casa6_install.py ./Downloads/
-RUN echo "install casa6... may take a while in the container " && \
+RUN echo "install casatools in the container " && \
     python3 ./Downloads/casa6_install.py --core --no-deps && pip3 install numpy && pip3 list && \
     rm -rf ./.cache/pip /tmp/* /var/tmp/*
+
+# note: only for the old days
 # libgfortran3 is not included in Ubuntu20.04 but required for current casa6-py36 whl
 # here we copy .so filed from Ubuntu18.04
 #   reference: https://pkgs.org
-RUN wget http://archive.ubuntu.com/ubuntu/pool/universe/g/gcc-6/libgfortran3_6.4.0-17ubuntu1_amd64.deb && \
-    dpkg-deb -c libgfortran3_6.4.0-17ubuntu1_amd64.deb && \ 
-    dpkg-deb -R libgfortran3_6.4.0-17ubuntu1_amd64.deb / && \
-    rm -rf ./libgfortran3_6.4.0-17ubuntu1_amd64.deb /DEBIAN
+# RUN wget http://archive.ubuntu.com/ubuntu/pool/universe/g/gcc-6/libgfortran3_6.4.0-17ubuntu1_amd64.deb && \
+#     dpkg-deb -c libgfortran3_6.4.0-17ubuntu1_amd64.deb && \ 
+#     dpkg-deb -R libgfortran3_6.4.0-17ubuntu1_amd64.deb / && \
+#     rm -rf ./libgfortran3_6.4.0-17ubuntu1_amd64.deb /DEBIAN
 
 # clean up
 

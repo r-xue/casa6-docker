@@ -1,226 +1,127 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>casa6_install package &mdash; casa6-docker/install 1.1.4 documentation</title>
-  
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/my_theme.css?v=b989c3a8" />
+      <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=61a4c737" />
 
   
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-  
-  
-
-  
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=2288b18e"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=a56c686a"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="../index.html" class="icon icon-home"> casa6-docker/install
           
-
-          
+          <a href="../index.html" class="icon icon-home">
+            casa6-docker/install
           </a>
-
-          
-            
-            
               <div class="version">
                 1.1.4
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">casa6-docker</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">casa6-docker</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../docker/brief.html">Brief</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../docker/usage.html">Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../docker/build.html">Local Build</a></li>
 </ul>
-<p class="caption"><span class="caption-text">casa6-install</span></p>
+<p class="caption" role="heading"><span class="caption-text">casa6-install</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../install/usage.html">Brief</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/usage.html#usage">Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/usage.html#smoke-test">Smoke Test</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/usage.html#background">Background</a></li>
 </ul>
-<p class="caption"><span class="caption-text">misc.</span></p>
+<p class="caption" role="heading"><span class="caption-text">misc.</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../reference.html">Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../history.html">History</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ack.html">Acknowledgment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
 </ul>
-<p class="caption"><span class="caption-text">examples</span></p>
+<p class="caption" role="heading"><span class="caption-text">examples</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/demo_api_uvhelper.html">ism3d.uvhelper: visibility imaging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/demo_api_arts.html">ism3d.arts: model artificial sources in different shapes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/demo_api_lens.html">ism3d.arts.lens: model artificial sources with gravitational lensing effects</a></li>
 </ul>
-<p class="caption"><span class="caption-text">API Reference</span></p>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../_autosummary/casa6_install.casa6_install.html">casa6_install.casa6_install</a></li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">casa6-docker/install</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html">Docs</a> &raquo;</li>
-        
-      <li>casa6_install package</li>
-    
-    
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">casa6_install package</li>
       <li class="wy-breadcrumbs-aside">
-        
-            
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<div class="section" id="casa6-install-package">
-<h1>casa6_install package<a class="headerlink" href="#casa6-install-package" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="module-casa6_install.casa6_install">
-<span id="casa6-install-casa6-install-module"></span><h2>casa6_install.casa6_install module<a class="headerlink" href="#module-casa6_install.casa6_install" title="Permalink to this headline">¶</a></h2>
+             
+  <section id="casa6-install-package">
+<h1>casa6_install package<a class="headerlink" href="#casa6-install-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-casa6_install.casa6_install">
+<span id="casa6-install-casa6-install-module"></span><h2>casa6_install.casa6_install module<a class="headerlink" href="#module-casa6_install.casa6_install" title="Permalink to this heading"></a></h2>
 <p>Main module.</p>
 <dl class="py function">
-<dt id="casa6_install.casa6_install.casa6_install">
-<code class="sig-prename descclassname">casa6_install.casa6_install.</code><code class="sig-name descname">casa6_install</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">whl_path</span></em>, <em class="sig-param"><span class="n">select</span><span class="o">=</span><span class="default_value">'core'</span></em>, <em class="sig-param"><span class="n">user</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">upgrade</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">nodeps</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/casa6_install/casa6_install.html#casa6_install"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#casa6_install.casa6_install.casa6_install" title="Permalink to this definition">¶</a></dt>
-<dd><p>install casa6 packages with pip</p>
+<dt class="sig sig-object py" id="casa6_install.casa6_install.casa6_install">
+<span class="sig-prename descclassname"><span class="pre">casa6_install.casa6_install.</span></span><span class="sig-name descname"><span class="pre">casa6_install</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">whl_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">select</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'core'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upgrade</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodeps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/casa6_install/casa6_install.html#casa6_install"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#casa6_install.casa6_install.casa6_install" title="Permalink to this definition"></a></dt>
+<dd><p>Install casa6 packages with pip.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="casa6_install.casa6_install.casatools_repack">
-<code class="sig-prename descclassname">casa6_install.casa6_install.</code><code class="sig-name descname">casatools_repack</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">whlname</span></em>, <em class="sig-param"><span class="n">abi</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">workdir</span><span class="o">=</span><span class="default_value">'/tmp'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/casa6_install/casa6_install.html#casatools_repack"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#casa6_install.casa6_install.casatools_repack" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="casa6_install.casa6_install.casatools_repack">
+<span class="sig-prename descclassname"><span class="pre">casa6_install.casa6_install.</span></span><span class="sig-name descname"><span class="pre">casatools_repack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">whlname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">abi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">workdir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'/tmp'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/casa6_install/casa6_install.html#casatools_repack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#casa6_install.casa6_install.casatools_repack" title="Permalink to this definition"></a></dt>
 <dd><p>repack a Py37 casatools whl for Py37/38</p>
 <dl class="simple">
 <dt>Usage:</dt><dd><p>casatools_repack(casatools-6.1.0.79-cp36-cp36m-macosx_10_15_x86_64.whl,abi=’cp38’)
@@ -230,26 +131,26 @@ casatools_repack(casatools-6.1.0.79-cp36-cp36m-macosx_10_15_x86_64.whl,abi=’cp
 </dd></dl>
 
 <dl class="py function">
-<dt id="casa6_install.casa6_install.download_casatools">
-<code class="sig-prename descclassname">casa6_install.casa6_install.</code><code class="sig-name descname">download_casatools</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">version</span><span class="o">=</span><span class="default_value">'latest'</span></em>, <em class="sig-param"><span class="n">workdir</span><span class="o">=</span><span class="default_value">'/tmp'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/casa6_install/casa6_install.html#download_casatools"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#casa6_install.casa6_install.download_casatools" title="Permalink to this definition">¶</a></dt>
-<dd><p>download py36 casatools whl</p>
+<dt class="sig sig-object py" id="casa6_install.casa6_install.download_casatools">
+<span class="sig-prename descclassname"><span class="pre">casa6_install.casa6_install.</span></span><span class="sig-name descname"><span class="pre">download_casatools</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'latest'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">workdir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'/tmp'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pyver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'36'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/casa6_install/casa6_install.html#download_casatools"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#casa6_install.casa6_install.download_casatools" title="Permalink to this definition"></a></dt>
+<dd><p>Download py36 casatools whl.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="casa6_install.casa6_install.main">
-<code class="sig-prename descclassname">casa6_install.casa6_install.</code><code class="sig-name descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/casa6_install/casa6_install.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#casa6_install.casa6_install.main" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="casa6_install.casa6_install.main">
+<span class="sig-prename descclassname"><span class="pre">casa6_install.casa6_install.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/casa6_install/casa6_install.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#casa6_install.casa6_install.main" title="Permalink to this definition"></a></dt>
 <dd><p>Console script function for casa6_install.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="casa6_install.casa6_install.run_subprocess">
-<code class="sig-prename descclassname">casa6_install.casa6_install.</code><code class="sig-name descname">run_subprocess</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cmd</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/casa6_install/casa6_install.html#run_subprocess"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#casa6_install.casa6_install.run_subprocess" title="Permalink to this definition">¶</a></dt>
-<dd><p>run a subprocess with realtime output</p>
+<dt class="sig sig-object py" id="casa6_install.casa6_install.run_subprocess">
+<span class="sig-prename descclassname"><span class="pre">casa6_install.casa6_install.</span></span><span class="sig-name descname"><span class="pre">run_subprocess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/casa6_install/casa6_install.html#run_subprocess"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#casa6_install.casa6_install.run_subprocess" title="Permalink to this definition"></a></dt>
+<dd><p>Run a subprocess with realtime output.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="casa6_install.casa6_install.whl_pack">
-<code class="sig-prename descclassname">casa6_install.casa6_install.</code><code class="sig-name descname">whl_pack</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">directory</span></em>, <em class="sig-param"><span class="n">dest_dir</span></em>, <em class="sig-param"><span class="n">build_number</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/casa6_install/casa6_install.html#whl_pack"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#casa6_install.casa6_install.whl_pack" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="casa6_install.casa6_install.whl_pack">
+<span class="sig-prename descclassname"><span class="pre">casa6_install.casa6_install.</span></span><span class="sig-name descname"><span class="pre">whl_pack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">build_number</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/casa6_install/casa6_install.html#whl_pack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#casa6_install.casa6_install.whl_pack" title="Permalink to this definition"></a></dt>
 <dd><p>Repack a previously unpacked wheel directory into a new wheel file.</p>
 <p>modified from <a class="reference external" href="https://github.com/pypa/wheel/blob/master/src/wheel/cli/pack.py">https://github.com/pypa/wheel/blob/master/src/wheel/cli/pack.py</a>
 with the output whl path returned</p>
@@ -260,51 +161,39 @@ wheel file name can be determined.
 :param dest_dir: Destination directory (defaults to the current directory)</p>
 </dd></dl>
 
-</div>
-<div class="section" id="module-casa6_install">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-casa6_install" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-casa6_install">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-casa6_install" title="Permalink to this heading"></a></h2>
 <p>Top-level package for casa6-install.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright 2020, Rui Xue
-
-    </p>
+    <p>&#169; Copyright 2020, Rui Xue.</p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
