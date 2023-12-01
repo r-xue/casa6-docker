@@ -10,12 +10,12 @@
 #       $ docker build --target latest -t casa6:latest -f Dockerfile .
 #
 #       $ docker image inspect casa6:base --format='{{.Size}}'
-#       $ docker run -it casa6:base bash
+#       $ docker run -it --platform linux/amd64 casa6:base bash
 #  
 #   + pull Dockhub images & login rxastro/casa6:base with bash
 #
 #       $ docker pull rxastro/casa6:base # only for update    
-#       $ docker run -it rxastro/casa6:base bash
+#       $ docker run -it --platform linux/amd64 rxastro/casa6:base bash
 #
 ###################################################################################################
 
@@ -106,24 +106,13 @@ RUN apt-get update && \
 # add more Python packages
 
 RUN mkdir ./.jupyter
-# RUN echo -e "\
-#     import os \n\
-#     c.IPKernelApp.pylab = 'inline' \n\
-#     c.ServerApp.notebook_dir = '.' \n\
-#     c.ServerApp.ip = '0.0.0.0' \n\
-#     c.ServerApp.allow_remote_access = False \n\
-#     c.ServerApp.open_browser = False \n\
-#     c.ServerApp.port = int(os.environ.get('PORT', 8888)) \n\
-#     c.ServerApp.allow_root = True \n\
-#     c.LabApp.news_url = None \n\
-#     c.LabApp.check_for_updates_class = 'jupyterlab.NeverCheckForUpdate' \n\
-#     " >> ./.jupyter/jupyter_lab_config.py
 
 RUN printf "%s\n" \
     "import os" \
     "c.IPKernelApp.pylab = 'inline'" \
     "c.ServerApp.notebook_dir = '.'" \
-    "c.ServerApp.ip = '0.0.0.0'" \
+    "c.ServerApp.ip = '*'" \
+    "c.ServerApp.allow_origin = ''" \
     "c.ServerApp.allow_remote_access = False" \
     "c.ServerApp.open_browser = False" \
     "c.ServerApp.port = int(os.environ.get('PORT', 8888))" \

@@ -13,7 +13,7 @@ To launch the container with an interactive shell on a host with `Docker Desktop
 
 .. code-block:: console
 
-    $ docker run -it -v ~/Workspace:/root/WorkDir rxastro/casa6:latest bash
+    $ docker run -it --platform linux/amd64 -v ~/Workspace:/root/WorkDir rxastro/casa6:latest bash
 
 This will download the image ``rxastro/casa6:latest``, start a container instance, and login as ``root`` (bravely...). It will also try to mount the host directory ``~/Workspace`` (assuming it exists) to ``/root/WorkDir`` of your container.
 After this, you can perform code development and data analysis in ``/root/WorkDir`` of your container (now pointing to ``~/Workspace`` on the host), with the access of tools/environment (e.g. **casa6**, **astropy**, etc.) residing in the image.
@@ -36,7 +36,7 @@ To log in a ``rxastro/casa6:latest`` container and start the Jupyter session,
 
 .. code-block:: console
 
-    user@host      $ docker run -v ~/Workspace:/root/WorkDir --env PORT=8890 -it -p 8890:8890 rxastro/casa6:latest bash
+    user@host      $ docker run --platform linux/amd64 -v ~/Workspace:/root/WorkDir --env PORT=8890 -it -p 8890:8890 rxastro/casa6:latest bash
     root@container $ jupyter-lab # start a Jupyter session
 
 Then you can move back to the host, open a web browser, and connect it to the Jupyter server running on the guest OS:

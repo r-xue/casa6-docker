@@ -26,7 +26,7 @@ Now you can log in the container instance from the freshly-built image:
 
 .. code-block:: console
 
-    $ docker run -it casa6:latest bash
+    $ docker run -it --platform linux/amd64 casa6:latest bash
 
 Within the container, you can try something like this to verify the installation of casatools:
 
