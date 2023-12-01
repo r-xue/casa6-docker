@@ -93,7 +93,7 @@ The equivalent command will be,
 
 Then it will unpack ``.whl``, perform necessary modifications to files inside, and repack them with the correct `ABI <https://www.python.org/dev/peps/pep-3149>`_ matching to your Python versions.
 
-Finally, it will spawn a subprocess and install the modified ``.whl``, along with other **casa6** packages (i.e., ``casatasks``, ``casashell``, ``casaviewer``, ``casaplotms``, ``casampi``, ``casatelemetry``) which are not platform-specific.
+Finally, it will spawn a subprocess and install the modified ``.whl``, along with other **casa6** packages (i.e., ``casatasks``, ``casashell``, ``casaviewer``, ``casaplotms``, ``casampi``) which are not platform-specific.
 The equivalent console command will be something like:
 
 .. code-block:: console
