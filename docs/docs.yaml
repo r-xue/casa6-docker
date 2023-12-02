@@ -1,0 +1,44 @@
+############################################################################
+#
+# setup:
+#
+#   install miniforge/mambaforge: the recommended minimal conda installer
+#     https://github.com/conda-forge/miniforge#mambaforge
+#
+#   step-by-step to reproduce the docs building environment
+#
+#     $ mamba env create -f docs.yaml
+#     $ mamba activate casa6-docker-docs
+#
+#     $ pip install casa6-install (from PyPI)
+#     $ pip install -e . (from local)
+#
+#   update:
+#     $ mamba update -n casa6-docker-docs --all
+#     $ mamba env update -f docs.yaml
+#
+# execute:
+#     $ make github
+#
+############################################################################
+
+name: casa6-docker-docs
+
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.8
+  - ipython
+  - pandoc
+  - pip:
+      - sphinxcontrib-bibtex
+      - pybtex
+      - latexcodec
+      - sphinx-copybutton
+      - nbsphinx
+      - sphinx_rtd_theme
+      - sphinxcontrib-bibtex
+      - rst2pdf
+      - sphinx-gallery
